@@ -38,6 +38,7 @@ let lion = new Animal("cat")
 
 
 // Prototype in function is different than __proto__ or Object.getPrototypeOf()
+// This is called prototypal chain
 
 Animal.prototype.sound = function() {
     return `${this.species} makes a sound!`
@@ -46,3 +47,11 @@ Animal.prototype.sound = function() {
 let germanSheperd = new Animal("dog");
 
 console.log(germanSheperd.sound());
+
+
+Array.prototype.customMethod = function() {
+    return `Custom method ${this}`
+}
+
+let myArray = [1,2,3]
+console.log(myArray.customMethod());
