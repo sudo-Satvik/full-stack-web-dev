@@ -8,18 +8,103 @@
         body{
             background-color: #222;
             color: #fff;
+            text-align: center;
+        }
+        .highlight{
+            background: yellowgreen;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        .hidden{
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-    <h2 id="select-id">This is ID</h2>
-    <h3 class="select-class">This is Class</h3>
+    <!-- Accessing DOM ELEMENTS -->
+     <section id="example-1">
+        <h2>Accessing DOM Elements</h2>
+        <p id="myParagraph">
+            This is the paragraph. Click on the button below to change my content!
+        </p>
+        <button id="changeTextButton">Change Text</button>
+     </section>
+     
+    <!-- Traversing the DOM -->
+    <section id="example-2">
+        <h2>Traversing the DOM</h2>
+        <ul id="citiesList">
+            <li>NewYork</li>
+            <li>Tokyo</li>
+            <li>Edinsburg</li>
+            <li>London</li>
+        </ul>
+        <button id="highlightFirstCity">Highlight First City</button>
+    </section>
+
+    <!-- Manipulating DOM Elements -->
+     <section id="example-3">
+        <h2>Manipulating DOM Elements</h2>
+        <div id="coffee-order">Order: <span id="coffee-type">Latte</span></div>
+        <button id="change-order">Change Order to Espresso</button>
+     </section>
+
+     <!-- Creating and Inserting the Elements -->
+      <section id="example-4">
+        <h2>Creating and Inserting Elements</h2>
+        <ul id="shoppingList">
+            <li>Bread</li>
+            <li>Milk</li>
+        </ul>
+        <button id="addNewItem">Add a new item to the Shopping List</button>
+      </section>
+
+      <!-- Removing DOM Element -->
+       <section id="example-5">
+        <h2>Removing DOM Elements</h2>
+        <ul id="taskList">
+            <li>Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li>
+        </ul>
+        <button id="removeLastTask">Remove Last Task</button>
+       </section>
     <script>
-        console.log("Hello from the script!");
-        document.getElementById('select-id').innerHTML = "Targeted ID"
-        document.getElementsByClassName('select-class').innerHTML = "Targeted Class"
-        document.querySelector('h1').innerHTML = "Targeted Element"
+        // Accessing DOM Element
+        const btn = document.getElementById('changeTextButton');
+        const textPara = document.getElementById('myParagraph');
+        btn.addEventListener('click', () => {
+            textPara.innerHTML = "Changed!"
+        });
+
+        // Traversing DOM
+        const btn2 = document.getElementById("highlightFirstCity");
+        let citiesList = document.getElementById("citiesList").firstElementChild;
+        btn2.addEventListener('click', function() {
+            citiesList.classList.add('highlight')
+        });
+
+        // Manipulating DOM Element
+        document.getElementById("change-order").addEventListener('click', function() {
+            document.getElementById("coffee-type").textContent = "Espresso"
+            document.getElementById("coffee-type").style.color = "#FF5733"
+        });
+
+        // Creating and Inserting the Elements
+        document.getElementById("addNewItem").addEventListener('click', function() {
+            // Creating the element
+            let newItem = document.createElement('li')
+            newItem.innerHTML = "Eggs <strong>and</strong> Milk"
+            // Injecting that element
+            document.getElementById('shoppingList').appendChild(newItem);
+        })
+
+        // Removing the Element of DOM
+        document.getElementById('removeLastTask').addEventListener('click', function() {
+            let tasks = document.getElementById("taskList")
+            tasks.lastElementChild.remove()
+            
+        });
     </script>
 </body>
 </html>
