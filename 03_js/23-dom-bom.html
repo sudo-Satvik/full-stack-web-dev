@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM and BOM</title>
+    <style>
+        body{
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <h2 id="select-id">This is ID</h2>
+    <h3 class="select-class">This is Class</h3>
+    <script>
+        console.log("Hello from the script!");
+        document.getElementById('select-id').innerHTML = "Targeted ID"
+        document.getElementsByClassName('select-class').innerHTML = "Targeted Class"
+        document.querySelector('h1').innerHTML = "Targeted Element"
+    </script>
+</body>
+</html>
