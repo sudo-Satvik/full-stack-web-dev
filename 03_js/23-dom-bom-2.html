@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM II</title>
+    <style>
+        body{
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+        }
+        .highlight{
+            background: yellowgreen;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Event Handling in the DOM -->
+    <section id="example-6">
+        <h2>Event Handling in the DOM</h2>
+        <button id="clickMeButton">Click Me!</button>
+    </section>
+
+    <!-- Event Delegation -->
+    <section id="example-7">
+        <h2>Event Delegation</h2>
+        <ul id="teaList">
+            <li class="teaItem">GreenTea</li>
+            <li class="teaItem">Black Tea</li>
+            <li class="teaItem">Oolong Tea</li>
+            <li>Not workable</li>
+        </ul>
+        <p>Double Click on any tea to select it!</p>
+    </section>
+
+    <!-- Form Handling in DOM -->
+    <section id="example-8">
+        <h2>Form Handling</h2>
+        <form id="feedbackForm">
+            <label for="feedbackInput">Your Feedback: </label>
+            <input type="text" id="feedbackInput" placeholder="Enter your feedbacks" />
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <p id="feedbackDisplay">Your feedback will be appear here as soon as you submit your feedback!</p>
+    </section>
+
+    <!-- DOM Content Loaded -->
+     <section id="example-9">
+        <h2>DOM Content Loaded</h2>
+        <p id="domStatus">Waiting for DOM to load...</p>
+     </section>
+
+
+     <!-- CSS Classes Manipulation -->
+     <section id="example-10">
+        <h2>CSS Class Manipulation</h2>
+        <p id="descriptionText">This text will change the color</p>
+        <button id="toggleHighlight">Toggle Highlight</button>
+     </section>
+
+
+    <script>
+        
+        // Event Handling in the DOM 
+        document.getElementById("clickMeButton").addEventListener('click', function(e){
+            console.log(e);
+        })
+
+        // Event Delegation in DOM
+        document.getElementById('teaList').addEventListener('dblclick', function(event) {
+            if (event.target && event.target.matches('.teaItem')){
+                event.target.classList.toggle('highlight');
+            }
+        });
+
+        // Form Handling in the DOM
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            // Stops the default behavior
+            event.preventDefault();
+            let userInput = document.getElementById('feedbackInput').value;
+            if (!userInput) alert("Please enter your feedback!");
+            else document.getElementById('feedbackDisplay').textContent = userInput;
+        })
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function(e){
+            document.getElementById('domStatus').textContent = "DOM Fully Loaded"
+        })
+
+        // CSS Classes Manipulation
+        document.getElementById('toggleHighlight').addEventListener('click', function(){
+            document.getElementById('descriptionText').classList.toggle('highlight');
+            document.getElementById('descriptionText').style.fontSize = "30px"
+        })
+    </script>
+</body>
+</html>
