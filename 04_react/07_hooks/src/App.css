@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.flex button {
+  background-color: #ffffffd5;
+}
+
+.flex button:hover{
+  background-color: #ffffffa8;
+  border: none;
+}
