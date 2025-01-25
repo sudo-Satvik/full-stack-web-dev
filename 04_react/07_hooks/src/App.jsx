@@ -9,7 +9,20 @@ const App = () => {
   let [val, setCounter] = useState(0);
 
   const addValue = () => {
-    setCounter(val +   1);
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!INTERVIEW ALERT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // This won't work as expected, bcz that will incrment only one value as the react took them in the form of the batch update and only update one value 
+    // setCounter(val + 1);
+    // setCounter(val + 1);
+    // setCounter(val + 1);
+    // setCounter(val + 1);
+    // setCounter(val + 1);
+
+    // Instead we can use this
+    // as the setCounter take call back and in that we can accesss the previous value of the counter and then we can update it according to the usage
+    setCounter(prevCounter => prevCounter + 1);     // 0 + 1 = 1
+    setCounter(prevCounter => prevCounter + 1);     // 1 + 1 = 2
+    setCounter(prevCounter => prevCounter + 1);     // 2 + 1 = 3
+    setCounter(prevCounter => prevCounter + 1);     // 3 + 1 = 4
   };
 
   const removeValue = () => {
