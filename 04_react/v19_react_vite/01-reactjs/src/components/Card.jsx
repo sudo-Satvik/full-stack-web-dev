@@ -1,6 +1,6 @@
 // eslint-disable-next-line react/prop-types
 const Card = ({ img, name, description, price }) => {
-  let age = 21;
+  const age = 18;
   return (
     <div className="w-sm rounded-md shadow-md bg-black text-gray-100">
       <img
@@ -16,13 +16,25 @@ const Card = ({ img, name, description, price }) => {
           <p className="text-gray-400">
             {description || "No description available."}
           </p>
+          <div
+            className={`w-fit px-3 py-1 rounded-md ${
+              age >= 18 ? "bg-green-800" : "bg-red-800"
+            }`}
+          >
+            {age >= 18 ? "Available" : "Not available"}
+          </div>
           <h2 className="text-5xl font-semibold mt-5">
             ${price?.toLocaleString() || "N/A"}
           </h2>
         </div>
         <button
+          disabled={age < 18}
           type="button"
-          className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-gray-800 text-gray-200 cursor-pointer hover:bg-gray-700"
+          className={`flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md ${
+            age < 18
+              ? "cursor-not-allowed bg-gray-700 text-gray-500"
+              : "cursor-pointer bg-gray-800 text-gray-200 hover:bg-gray-700"
+          }`}
         >
           {age >= 18 ? "Buy Now" : "Not eligible"}
         </button>
