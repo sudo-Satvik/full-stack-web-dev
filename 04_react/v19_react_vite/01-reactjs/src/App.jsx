@@ -5,6 +5,8 @@ import { gameData } from "./data/cardData.js";
 import Profile from "./components/Profile";
 import { EventHandling } from "./components/EventHandling.jsx";
 import EventProps from "./components/EventProps.jsx";
+import EventPropagation from "./components/EventPropagation.jsx";
+import State from "./components/State.jsx";
 
 const App = () => {
   const handleSubmit = () => {
@@ -52,6 +54,8 @@ const App = () => {
 
       <EventHandling />
       <EventProps />
+      <EventPropagation />
+      <State />
     </div>
   );
 };
