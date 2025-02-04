@@ -13,7 +13,10 @@ const UserDetails = () => {
       email: "janedoe@gmail.com",
     },
   ];
+
+  console.log(userData);
   const [users, setUsers] = useState(userData);
+  
 
   return (
     <>
@@ -29,7 +32,7 @@ const UserDetails = () => {
           </li>
         ))}
       </ul>
-        <hr className="my-10 text-gray-500"/>
+      <hr className="my-10 text-gray-500" />
       <ul className="flex flex-col gap-5 text-left ml-10">
         {users.map((user) => (
           <li key={user.id} className="text-white">
@@ -39,6 +42,7 @@ const UserDetails = () => {
           </li>
         ))}
       </ul>
+      
     </>
   );
 };

@@ -9,6 +9,7 @@ import EventPropagation from "./components/EventPropagation.jsx";
 import State from "./components/State.jsx";
 
 import UserDetails from "./components/UserDetails.jsx";
+import DerivedStates from "./components/DerivedStates.jsx";
 
 const App = () => {
   const handleSubmit = () => {
@@ -60,6 +61,8 @@ const App = () => {
       <State />
 
       <UserDetails />
+      <hr className="my-20 text-gray-700"/>
+      <DerivedStates />
     </div>
   );
 };
