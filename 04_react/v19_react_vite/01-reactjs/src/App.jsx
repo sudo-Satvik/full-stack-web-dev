@@ -10,6 +10,7 @@ import State from "./components/State.jsx";
 
 import UserDetails from "./components/UserDetails.jsx";
 import DerivedStates from "./components/DerivedStates.jsx";
+import LiftingStateUp from "./components/LiftingStateUp.jsx";
 
 const App = () => {
   const handleSubmit = () => {
@@ -61,8 +62,10 @@ const App = () => {
       <State />
 
       <UserDetails />
-      <hr className="my-20 text-gray-700"/>
+      <hr className="my-20 text-gray-700" />
       <DerivedStates />
+      <hr className="my-20 text-gray-700" />
+      <LiftingStateUp />
     </div>
   );
 };
