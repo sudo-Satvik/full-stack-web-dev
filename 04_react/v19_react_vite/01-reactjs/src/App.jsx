@@ -11,7 +11,7 @@ import State from "./components/State.jsx";
 import UserDetails from "./components/UserDetails.jsx";
 import DerivedStates from "./components/DerivedStates.jsx";
 import LiftingStateUp from "./components/LiftingStateUp.jsx";
-
+import ToggleSwitch from "./projects/ToggleSwitch.jsx";
 const App = () => {
   const handleSubmit = () => {
     confirm("Ahea ahea ahea ahea");
@@ -66,6 +66,8 @@ const App = () => {
       <DerivedStates />
       <hr className="my-20 text-gray-700" />
       <LiftingStateUp />
+      <hr className="my-20 text-gray-700" />
+      <ToggleSwitch />
     </div>
   );
 };
