@@ -1,4 +1,5 @@
 import ShortCircuit from "./components/ShortCircuit";
+import Effect from "./hooks/Effect";
 import State from "./hooks/State";
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
       <hr />
       <h1 style={{ textAlign: "center" }}>UseState Advance Counter App</h1>
       <State />
+      <hr />
+      <h1 style={{ textAlign: "center" }}>UseEffect Hook</h1>
+      <Effect />
     </>
   );
 }
