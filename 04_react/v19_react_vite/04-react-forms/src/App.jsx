@@ -1,6 +1,9 @@
 // import RegistrationForm from "./components/RegistrationFormDeprecated";
 // import FinalRegistration from "./components/FinalRegistration";
-import LoginForm from "./components/LoginForm";
+// import LoginForm from "./components/LoginForm";
+
+import ContactForm from "./components/ContactForm";
+
 const App = () => {
   return (
     <div className="bg-gray-900 min-h-screen w-full text-white">
@@ -8,7 +11,8 @@ const App = () => {
         Registration Form
       </h1>
       <FinalRegistration /> */}
-      <LoginForm />
+      {/* <LoginForm /> */}
+      <ContactForm />
     </div>
   );
 };
