@@ -1,32 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const Effect = () => {
   const [counter, setCounter] = useState(0);
   const [time, setTime] = useState("HH:MM:SS");
-  //   console.log("Hello " + Math.random());            // this will run jbtk hum increment btn ko click krenge
-  //   useEffect(() => {
-  //     console.log("Hello from useEffect");            // this will run only for once
-  //   }, []);
 
-  useEffect(() => {
-    console.log("count value: " + counter);
-  }, [counter]);
+  // useEffect(() => {
+  // console.log(counter);
+  // }, [counter]);
 
   useEffect(() => {
     setInterval(() => {
-      const now = new Date();
-    //   console.log(now.toLocaleTimeString() + " " + Math.random());
-      setTime(now.toLocaleTimeString());
+      const date = new Date();
+      setTime(date.toLocaleTimeString());
     }, 1000);
   }, []);
 
   return (
-    <div>
+    <>
+      <h1>Counter</h1>
       <p>Count: {counter}</p>
       <button onClick={() => setCounter(counter + 1)}>Increase</button>
 
-      <p>Time: {time}</p>
-    </div>
+      <h2>Time right now: {time}</h2>
+    </>
   );
 };
 
