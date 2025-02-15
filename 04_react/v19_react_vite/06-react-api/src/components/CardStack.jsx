@@ -21,7 +21,7 @@ const CardStack = () => {
   if (!api)
     return (
       <div className="flex items-center justify-center h-200">
-        <h1 className="text-6xl">Loading data, please wait...</h1>
+        <h1 className="text-6xl">Loading data, please wait....</h1>
       </div>
     );
 
