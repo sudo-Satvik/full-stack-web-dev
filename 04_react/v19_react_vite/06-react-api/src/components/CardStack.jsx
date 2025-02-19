@@ -7,22 +7,6 @@ const CardStack = () => {
 
   const API = "https://pokeapi.co/api/v2/pokemon/ditto";
 
-  // const fetchApi = () => {
-  //   setTimeout(() => {
-  //     fetch(API)
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setApi(data);
-  //         setLoadingState(false);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //         setErrorState(err);
-  //         setLoadingState(false);
-  //       });
-  //   }, 1000);
-  // };
-
   const fetchApi = async () => {
     try {
       const res = await fetch(API);
